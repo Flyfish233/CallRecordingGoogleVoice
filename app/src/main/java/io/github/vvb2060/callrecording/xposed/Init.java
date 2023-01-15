@@ -148,7 +148,7 @@ public class Init implements IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) {
-        if (!"com.google.android.dialer".equals(lpparam.packageName)) return;
+        if (!"com.google.android.apps.googlevoice".equals(lpparam.packageName)) return;
         new Thread(() -> {
             try (var dex = new DexHelper(lpparam.classLoader)) {
                 hookCanRecordCall(dex);
